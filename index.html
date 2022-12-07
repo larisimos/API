@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Rick and Morty</title>
+</head>
+<body>
+    <h1>Catálogo dos personagens de Rick and Morty</h1>
+
+    <h3>Digite um número para ver o personagem correspondente</h3>
+    <div class="pesquisa"> 
+<input type="number" id="casas">
+    <input type="button" value="Enviar" id="enviar"><br></div>
+    <div id="mostra"></div>
+  
+  <script>
+    document.querySelector('#enviar').addEventListener('click',consulta);
+    let casa=""
+    
+    async function consulta(){
+        
+         casa = document.querySelector('#casas').value;
+        
+
+        const url='https://rickandmortyapi.com/api/character/'+casa;
+        try{
+            let resposta=  await fetch(url);
+            let js = await resposta.json();
+            console.log(js)
+            mostraDados(js);
+        }catch {
+            console.log("erro")
+        }
+    }       
+    function mostraDados(js){
+        
+        const painel = document.querySelector('#mostra');
+        let texto= "<h1>Dados sobre o personagem:</h1>";
+        texto=texto + "Nome: "+ js.name+"<br>";
+        texto=texto + "Espécie: "+ js.species+"<br>";
+        texto=texto + "Tipo: "+ js.type+"<br>";
+        texto=texto + "Gênero: " + js.gender+"<br>";
+        texto=texto + "Status: " + js.status;
+        
+        
+        painel.innerHTML = texto;
+         
+    }
+    
+</script>
+</body>
+</html>
