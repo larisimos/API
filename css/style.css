@@ -1,0 +1,21 @@
+body{
+    background-color: chartreuse ;
+}
+h1{
+color: blue;
+text-align: center;
+}
+h3{
+    color: blue;
+    text-align: center;
+}
+#enviar{
+    color:white;
+    background-color: darkblue;
+}
+.pesquisa{
+    text-align: center;
+}
+#mostra{
+    text-align: center;
+}
