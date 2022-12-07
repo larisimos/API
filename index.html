@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Rick and Morty</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 <input type="number" id="casas">
     <input type="button" value="Enviar" id="enviar"><br></div>
     <div id="mostra"></div>
-  
+    
   <script>
     document.querySelector('#enviar').addEventListener('click',consulta);
     let casa=""
@@ -33,7 +33,7 @@
             mostraDados(js);
         }catch {
             console.log("erro")
-        }
+        } 
     }       
     function mostraDados(js){
         
@@ -43,13 +43,13 @@
         texto=texto + "Espécie: "+ js.species+"<br>";
         texto=texto + "Tipo: "+ js.type+"<br>";
         texto=texto + "Gênero: " + js.gender+"<br>";
-        texto=texto + "Status: " + js.status;
-        
+        texto=texto + "Status: " + js.status+"<br>";
         
         painel.innerHTML = texto;
-         
     }
-    
+   
+        
 </script>
+
 </body>
 </html>
